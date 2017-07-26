@@ -34,7 +34,7 @@ namespace L_Q
                 button5.Text = "MAX";
                 panel2.Width = 50;
 
-                /// button width change 
+                /// button width change to 45px
                 button1.Width = 45;
                 button2.Width = 45;
                 button3.Width = 45;
@@ -51,17 +51,14 @@ namespace L_Q
                 button3.Width = 200;
                 button4.Width = 200;
 
-
-
-
-
-
-
-
-
             }
         }
 
+        /// <summary>
+        /// This will exit the Form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
             Application.Exit();
