@@ -12,6 +12,8 @@ namespace L_Q
 {
     public partial class Form1 : Form
     {
+       // testpage linerPage; 
+
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +31,8 @@ namespace L_Q
         /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
-            if (panel2.Width == 240) {
+            if (panel2.Width == 206)
+            {
 
                 button5.Text = "MAX";
                 panel2.Width = 50;
@@ -40,10 +43,15 @@ namespace L_Q
                 button3.Width = 45;
                 button4.Width = 45;
 
+                //this will fix the main panel
+
+
+
+
 
             } else if (panel2.Width == 50) {
                 button5.Text = "MIN";
-                panel2.Width = 240;
+                panel2.Width = 206;
 
                 //button width change to 200 px 
                 button1.Width = 200;
@@ -62,6 +70,68 @@ namespace L_Q
         private void button7_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+        /// <summary>
+        /// This will Minamize the entire form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// this will show  the content of the usercontrolview  for the Liner 
+        /// </summary>
+        /// <param name="content"></param>
+        private void showContentLinear(Control content) {
+
+            panel4.Controls.Clear(); // clear current content
+            panel4.Controls.Add(content); // add new
+            content.Dock = DockStyle.Fill; // fill placeholder area
+
+        }
+
+      
+
+        /// <summary>
+        /// this is the Linear Button 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            showContentLinear(new testpage());
+        }
+
+
+        /// <summary>
+        /// this is the button for the quadratic 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            showContentLinear(new testpage2()); 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showContentLinear(new settingPage());
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            showContentLinear(new aboutPage());
         }
     }
 }
