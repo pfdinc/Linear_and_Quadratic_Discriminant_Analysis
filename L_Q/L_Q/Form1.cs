@@ -8,12 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+////{1BF} this is so you can move the borderless form 
+using System.Runtime.InteropServices;
+
 namespace L_Q
 {
     public partial class Form1 : Form
     {
-       // testpage linerPage; 
-
+        // testpage linerPage; 
+        ////{2BF} this is so you can move the borderless form 
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        //***********************************************************************
         public Form1()
         {
             InitializeComponent();
@@ -132,6 +143,24 @@ namespace L_Q
         private void button4_Click(object sender, EventArgs e)
         {
             showContentLinear(new aboutPage());
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// ////{1BF} this is so you can move the borderless form 
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
         }
     }
 }

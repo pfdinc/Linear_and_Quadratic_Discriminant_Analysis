@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.Name = "testpage";
-            this.Size = new System.Drawing.Size(1332, 741);
+            this.Size = new System.Drawing.Size(1289, 808);
             this.Load += new System.EventHandler(this.testpage_Load);
             this.ResumeLayout(false);
 

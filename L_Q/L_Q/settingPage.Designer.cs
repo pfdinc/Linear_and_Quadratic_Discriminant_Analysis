@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Name = "settingPage";
-            this.Size = new System.Drawing.Size(1224, 718);
+            this.Size = new System.Drawing.Size(1289, 808);
             this.ResumeLayout(false);
 
         }
