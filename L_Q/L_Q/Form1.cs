@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+//this is for the sql 
+using System.Data.Sql;
+
+
 ////{1BF} this is so you can move the borderless form 
 using System.Runtime.InteropServices;
 
@@ -25,15 +29,20 @@ namespace L_Q
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
         //***********************************************************************
+
         public Form1()
         {
             InitializeComponent();
+            //*******************************************************************
+
+            //showContentLinear(new Form2());
+            //*******************************************************************
             button1.Width = 200;
             button2.Width = 200;
             button3.Width = 200;
             button4.Width = 200;
+            panel4.Width = 1289;
         }
-
 
         /// <summary>
         /// this button will minamize and maximixe buttons and panel 
@@ -46,8 +55,15 @@ namespace L_Q
             {
 
                 button5.Text = "MAX";
+                //when the page is minamiized 
+                button1.Text = "L";
+                button2.Text = "Q";
+                button3.Text = "S";
+                button4.Text = "A";
+                
                 panel2.Width = 50;
-
+                //the pannel that contains user control 
+                panel4.Width = 1482;
                 /// button width change to 45px
                 button1.Width = 45;
                 button2.Width = 45;
@@ -56,13 +72,19 @@ namespace L_Q
 
                 //this will fix the main panel
 
-
-
-
-
             } else if (panel2.Width == 50) {
                 button5.Text = "MIN";
                 panel2.Width = 206;
+
+                //the pannel that contains user control 
+                panel4.Width = 1289;
+
+                button1.Text = "Linear";
+                button2.Text = "Quadratic";
+                button3.Text = "Sign In";
+                button4.Text = "About";
+
+
 
                 //button width change to 200 px 
                 button1.Width = 200;
@@ -83,7 +105,6 @@ namespace L_Q
             Application.Exit();
         }
 
-
         /// <summary>
         /// This will Minamize the entire form 
         /// </summary>
@@ -94,10 +115,13 @@ namespace L_Q
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //this is the middle panel 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+
 
         /// <summary>
         /// this will show  the content of the usercontrolview  for the Liner 
@@ -111,8 +135,6 @@ namespace L_Q
 
         }
 
-      
-
         /// <summary>
         /// this is the Linear Button 
         /// </summary>
@@ -123,7 +145,6 @@ namespace L_Q
             showContentLinear(new testpage());
         }
 
-
         /// <summary>
         /// this is the button for the quadratic 
         /// </summary>
@@ -133,13 +154,22 @@ namespace L_Q
         {
             showContentLinear(new testpage2()); 
         }
-
+        /// <summary>
+        /// this is the setting button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             showContentLinear(new settingPage());
 
         }
 
+        /// <summary>
+        /// this is the about button 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             showContentLinear(new aboutPage());
@@ -151,8 +181,7 @@ namespace L_Q
         }
 
         /// <summary>
-        /// ////{1BF} this is so you can move the borderless form 
-        /// 
+        /// ////{3BF} this is so you can move the borderless form 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -160,6 +189,22 @@ namespace L_Q
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
+        }
+
+        //this is the top panel 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
