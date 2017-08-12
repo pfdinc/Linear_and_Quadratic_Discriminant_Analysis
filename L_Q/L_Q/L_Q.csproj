@@ -79,6 +79,18 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="linearGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="linearGraph.Designer.cs">
+      <DependentUpon>linearGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="linearResults.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="linearResults.Designer.cs">
+      <DependentUpon>linearResults.cs</DependentUpon>
+    </Compile>
     <Compile Include="linerTransition.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="linearGraph.resx">
+      <DependentUpon>linearGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="linearResults.resx">
+      <DependentUpon>linearResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="linerTransition.resx">
       <DependentUpon>linerTransition.cs</DependentUpon>

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace L_Q
 {
-    public partial class testpage2 : UserControl
+    public partial class linearResults : UserControl
     {
-        public testpage2()
+        public linearResults()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-           
         }
     }
 }
